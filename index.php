@@ -16,10 +16,12 @@ if (isset($_POST["go"]) & !isset($_SESSION["userName"])) {
     $userName = $_POST["userName"];
     $_SESSION["userName"] = $userName;
 }
+//смена имени пользователя
 if (isset($_POST["reset"]) & isset($_SESSION["userName"])) {
     $userName = $_POST["userName"];
     $_SESSION["userName"] = $userName;
 }
+//отправка сообщения
 if (isset($_SESSION["userName"]) & isset($_POST["msgGo"])) {
     $sesid = session_id();
     $name = $_SESSION["userName"];
@@ -62,3 +64,4 @@ if (isset($_SESSION["userName"]) & isset($_POST["msgGo"])) {
     </p>
 </body>
 </html>
+//Дворяшин,Дёмин,Жиляева,Игнатьев,Качаев,Кузьмикова,Кузьминов,Несененко,Рафаэлян,Шумилина,Юшин,Яситников,Малиновская,Киреев

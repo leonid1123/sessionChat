@@ -32,14 +32,16 @@ if (isset($_SESSION["userName"]) & isset($_POST["msgGo"])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <form action="index.php" method="post">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
         <p>Укажите Имя</p>
         <input type="text" name="userName">
         <input type="submit" name="go" value="GO">
@@ -49,7 +51,11 @@ if (isset($_SESSION["userName"]) & isset($_POST["msgGo"])) {
         <input type="submit" name="msgGo" value="Send message">
     </form>
     <p>
-        <?php echo "Твоё имя: " . $_SESSION["userName"]; ?>
+        <?php
+        if (isset($_SESSION["userName"])) {
+            echo "Твоё имя: " . $_SESSION["userName"];
+        }
+        ?>
     </p>
     <p>Окно вывода</p>
     <p>
@@ -63,5 +69,6 @@ if (isset($_SESSION["userName"]) & isset($_POST["msgGo"])) {
         ?>
     </p>
 </body>
+
 </html>
 //Дворяшин,Дёмин,Жиляева,Игнатьев,Качаев,Кузьмикова,Кузьминов,Несененко,Рафаэлян,Шумилина,Юшин,Яситников,Малиновская,Киреев
